@@ -1,0 +1,27 @@
+digraph LeNet {
+	input [label="Entrada
+(32x32x3)"]
+	C1 [label="Capa C1
+(6 filtros 5x5)"]
+	S2 [label="Capa S2
+(Sub-muestreo)"]
+	C3 [label="Capa C3
+(16 filtros 5x5)"]
+	S4 [label="Capa S4
+(Sub-muestreo)"]
+	C5 [label="Capa C5
+(120 filtros 5x5)"]
+	Flatten [label=Flatten]
+	FC6 [label="Capa FC6
+(84 neuronas)"]
+	FC7 [label="Capa FC7
+(43 neuronas, salida)"]
+	input -> C1
+	C1 -> S2
+	S2 -> C3
+	C3 -> S4
+	S4 -> C5
+	C5 -> Flatten
+	Flatten -> FC6
+	FC6 -> FC7
+}
